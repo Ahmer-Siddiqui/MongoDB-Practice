@@ -20,4 +20,13 @@ app.post('/',async (req,res)=>{
     res.send(req.body)
 })
 
+app.put("/:name",async(req,res)=>{
+    const data  = await dbConnect();
+    const result = await data.updateMany(
+        {name:req.params.name},{$set:req.body}
+    )
+    console.log(result);
+    res.send(req.body)
+})
+
 app.listen(5000);

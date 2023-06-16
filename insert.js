@@ -1,4 +1,4 @@
-const dbConnect = require('./mongodb')
+const dbConnect = require('./mongodb'); 
 
 const insert = async ()=>{
     const db = await dbConnect();
